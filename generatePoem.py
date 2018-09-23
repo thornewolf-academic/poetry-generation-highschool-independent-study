@@ -15,7 +15,7 @@ def generate_poem(rhymeScheme,syllableListString,freqDict):
 	startList=freqDict['START']
 	lastWord='ZZZZ'
 	for eachLineNum in range(len(rhymeScheme)):
-		print(eachLineNum)
+		#print(eachLineNum)
 		currentLine=[]
 		currentSyllableCount=0
 		currentWord=random.choice(startList)
@@ -31,11 +31,10 @@ def generate_poem(rhymeScheme,syllableListString,freqDict):
 			currentSyllableCount+=determine_syllables(currentWord)
 			currentLine.append(currentWord.strip("'!"))
 		lastWord=currentWord
-
 		currentLine=' '.join(currentLine)
 		currentPoem.append(currentLine)
 	currentPoem='\n'.join(currentPoem)
-	_returnPoem=currentPoem.lower()
+	_returnPoem=currentPoem#.lower()
 	return _returnPoem
 
 def select_within_limit(inputList,allowedSyllables,rhymesWith):
@@ -44,7 +43,7 @@ def select_within_limit(inputList,allowedSyllables,rhymesWith):
 	'''
 	#print("in list is ",inputList)
 	choiceList=[]
-	print(len(inputList))
+	#print(len(inputList))
 	'''
 	for word in inputList:
 		#print(word,pronouncing.rhymes(rhymesWith))
@@ -63,9 +62,10 @@ def select_within_limit(inputList,allowedSyllables,rhymesWith):
 		#print('defaulted')
 		choiceList=inputList
 	else:
-		print('rhyme')
+		pass
+		#print('rhyme')
 	_returnWord=random.choice(choiceList)
-	print(_returnWord)
+	#print(_returnWord)
 	return _returnWord
 
 

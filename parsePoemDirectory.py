@@ -10,7 +10,7 @@ def concat_dir_poems(inDirectory):
 	_returnString=''
 	fileList=[f for f in os.listdir(inDirectory) if f!='style' and f!='.DS_Store']
 	for eachFile in fileList:
-		print('opening',eachFile)
+		#print('opening',eachFile)
 		with open(inDirectory+'/'+eachFile) as f:
 			fileContents=f.read()
 			_returnString+=fileContents+'\n'
